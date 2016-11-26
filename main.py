@@ -18,8 +18,5 @@ class ScanDelegate(ble.DefaultDelegate):
 # Create scanner object with my deligate class and scann nearby devices
 scanner = ble.Scanner().withDelegate(ScanDelegate())
 scanner.start()
-t = 0
-while t<1000:
-    scanner.process(0.1)
-    t += 1
+scanner.process(10)
 

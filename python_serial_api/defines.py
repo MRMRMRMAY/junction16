@@ -1,0 +1,32 @@
+import serial
+
+# console
+SERIAL_CONSOLE='/dev/ttyUSB0'
+
+# iBeacon configuration according to manual
+SERIAL_BAUDRATE=19200			
+SERIAL_PARITY=serial.PARITY_NONE
+SERIAL_STOPBITS=serial.STOPBITS_ONE
+SERIAL_FLOW_CONTROL=False
+
+# delay between sequential write and read (seconds)
+TIME_DELAY=0.2
+
+# IDs
+IBEACON_BROADCAST=0
+IBEACON_1_ID=1
+IBEACON_2_ID=2
+IBEACON_3_ID=3
+
+
+IBEACON_ARRAY_ALL = [IBEACON_1_ID, IBEACON_2_ID, IBEACON_3_ID]
+IBEACON_ARRAY_REMOTE = IBEACON_ARRAY_ALL[1:]
+
+# PYTHON HOST SYSTEM ID (currently does not matter)
+HOST_ID = 0
+
+
+# USERS FROM WEB INTERFACE
+USER_RANDOM = 0
+USER_RICHARD = 1
+USER_KRISHJANIS = 2
