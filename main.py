@@ -6,16 +6,20 @@ import time
 config = configparser.ConfigParser()
 config.read('user_config.ini')
 
-# Create scanner object
-scanner = ble.Scanner(0)
+# Define deilgate object funtions
+class ScanDelegate(ble.DefaultDelegate):
+    def __init__(self):
+        ble.DefaultDelegate.__init__(self)
 
-# Display scanned users
+    def handleDiscovery(self, dev, isNewDev, isNewData):
+        for user in config.sections():
+            if dev.addr==config[user]['MAC_address']:
+                print(user, "RSSI", dev.rssi)
+# Create scanner object with my deligate class and scann nearby devices
+scanner = ble.Scanner().withDelegate(ScanDelegate())
+scanner.start()
 t = 0
-while t<40:
-    devices = scanner.scan(0.1)
-    for d in devices:
-            for user in config.sections():
-                if d.addr==config[user]['MAC_address']:
-                    print(user, "RSSI:", d.rssi)
-    time.sleep(0.5)
+while t<1000:
+    scanner.process(0.1)
     t += 1
+
