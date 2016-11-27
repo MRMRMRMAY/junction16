@@ -19,7 +19,7 @@ class Beacon():
 		)
 
 		if (self.serial_connection.isOpen() == False):
-			print "Connection not open!"
+			print("Connection not open!")
 
 	def close_connection(self):
 		self.serial_connection.close()
@@ -63,10 +63,10 @@ class Beacon():
 		self.send_byte_array( bytearray([0x2, 0x13, level]) )
 	
 	def debug_print_message(self, length, message):
-		print "Length ", length , "Message-> ",
+		print("Length ", length , "Message-> "),
 		for i in message:
-			print "0x" + i.encode("hex"),
-		print ''
+			print("0x" + i.encode("hex")),
+		print('')
 
 	def listen_mode(self):
 		while(1):

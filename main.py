@@ -15,8 +15,6 @@ class ScanDelegate(ble.DefaultDelegate):
         for user in config.sections():
             if dev.addr==config[user]['MAC_address']:
                 print(user, "RSSI", dev.rssi)
-# Create scanner object with my deligate class and scann nearby devices
-scanner = ble.Scanner().withDelegate(ScanDelegate())
 scanner.start()
 scanner.process(10)
 
