@@ -4,6 +4,7 @@ import bluepy.btle as ble
 
 import urllib2
 
+from player import *
 from defines import *
 
 # First person
@@ -18,8 +19,9 @@ from defines import *
 # global variables
 current_user = 0
 current_mac = USERS_MAC_ARRAY[current_user]
-current_rssi = -70
+current_rssi = RSSI_THRESH_MIN-1
 current_sleepzzzz = 0
+current_track = 0
 
 # Define deligate object
 class ScanDelegate(ble.DefaultDelegate):
@@ -34,17 +36,22 @@ class ScanDelegate(ble.DefaultDelegate):
 
 
 
+
+
 def get_params_from_server():
         ret = []
-        params = urllib2.urlopen("http://zzzyield.azurewebsites.net/state.php").read()
-        #params = "1 1 1"
-        #print params
-        #print len(params)
-        #print "WTF??"
-        params = params.split(" ")
-        for i in params:
-	        ret.append(int(i))
-        return ret
+        try:
+               params = urllib2.urlopen("http://zzzyield.azurewebsites.net/state.php").read()
+               params = params.split(" ")
+               for i in params:
+                       ret.append(int(i))
+               return ret
+        except:
+               print("Connection lost!")
+               ret.append(current_user)
+               ret.append(current_sleepzzzz)
+               ret.append(0) # Unused activity
+               return ret
 
 
 
@@ -73,12 +80,13 @@ def get_light_level_from_sleepzzzz():
 
 
 def ligth_show():
-        #beacon = iBeacon.Beacon()
-        #beacon.open_connection(SERIAL_CONSOLE)
-        #beacon.greetings()
+        # beacon = iBeacon.Beacon()
+        # beacon.open_connection(SERIAL_CONSOLE)
+        # beacon.greetings()
         
         # Create bl scanner object
         scanner = ble.Scanner().withDelegate(ScanDelegate())
+        player = Player()
         print("Ble scanner started")
         scanner.start()
         while(1):
@@ -96,7 +104,7 @@ def ligth_show():
                 # SET SLEEPZZZZ LIGHT
                 sleepzzz = get_light_level_from_sleepzzzz()
                 print("Sleepz Light:", sleepzzz)
-                #beacon.set_light_level_by_ID(IBEACON_1_ID, sleepzzz)
+                # beacon.set_light_level_by_ID(IBEACON_1_ID, sleepzzz)
                 
                 print("Person: ", params[0])
                 #print("Sleepzzzzzz: ", params[1])
@@ -106,14 +114,19 @@ def ligth_show():
                 scanner.process(2)
                 #scanner.scan(1)
                 
+                # UPDATE MUSIC PLAYER
+                player.setState(current_rssi >= RSSI_THRESH_MIN)
+                player.update(current_user, current_sleepzzzz)
+                
                 # SET DISTANCE LIGHTS
                 light_level = get_light_level_from_rssi()
                 print("RSSI:", current_rssi)
                 print("Distance Light:", light_level)
-                #beacon.set_light_level_by_ID(IBEACON_2_ID, light_level)
-                #beacon.set_light_level_by_ID(IBEACON_3_ID, light_level)
+                # beacon.set_light_level_by_ID(IBEACON_2_ID, light_level)
+                time.sleep(0.1)
+                # beacon.set_light_level_by_ID(IBEACON_3_ID, light_level)
         
-        #beacon.close_connection()
+        # beacon.close_connection()
 
 
 if __name__ == '__main__':

@@ -1,0 +1,79 @@
+('Discovered device', u'68:9c:35:41:4c:51')
+('Discovered device', u'33:31:40:a1:5d:78')
+('Discovered device', u'76:b9:7b:da:2c:d6')
+('Discovered device', u'f4:0f:24:1c:6a:55')
+('Discovered device', u'50:8c:6b:14:1b:78')
+('Discovered device', u'7a:c6:8f:30:b7:31')
+('Discovered device', u'60:f8:1d:aa:03:ff')
+('Discovered device', u'6e:e9:dd:eb:0a:0e')
+('Discovered device', u'6c:40:08:a0:0d:e5')
+('Discovered device', u'3c:15:c2:ba:b7:47')
+('Discovered device', u'ed:39:7c:49:ea:0f')
+('Discovered device', u'4a:09:2a:65:ef:1e')
+('Discovered device', u'04:4d:b3:43:21:f8')
+('Discovered device', u'b8:69:c2:40:b3:e0')
+('Discovered device', u'ac:bc:32:6d:3f:51')
+('Discovered device', u'c7:f5:0e:a2:ad:9c')
+('Discovered device', u'e5:8d:eb:89:ee:4d')
+('Discovered device', u'64:9a:4c:83:02:f8')
+('Received new data from', u'e5:8d:eb:89:ee:4d')
+Device c7:f5:0e:a2:ad:9c (random), RSSI=-86 dB
+  Complete 128b Services = 1bc5d5a50200a0b6e41141a50100ed98
+  Complete Local Name = oura_9_C7F50EA2AD9C
+  Manufacturer = b2020100
+  Flags = 06
+Device 33:31:40:a1:5d:78 (random), RSSI=-81 dB
+  Flags = 06
+  Manufacturer = 4c000a0100
+Device 50:8c:6b:14:1b:78 (random), RSSI=-52 dB
+  Manufacturer = 4c0002152f234454cf6d4a0fadf2f4911ba9ffa60001000200
+Device 3c:15:c2:ba:b7:47 (public), RSSI=-93 dB
+  Flags = 06
+  Manufacturer = 4c0010020b00
+Device b8:69:c2:40:b3:e0 (public), RSSI=-72 dB
+  Short Local Name = JBL Charge
+  Flags = 18
+  Manufacturer = 5700cb0ebc1e010000
+  Appearance = 0002
+Device e5:8d:eb:89:ee:4d (random), RSSI=-81 dB
+  Complete 128b Services = 1bc5d5a50200a0b6e41141a50100ed98
+  Complete Local Name = oura_9_E58DEB89EE4D
+  Manufacturer = b2020100
+  Flags = 06
+Device 76:b9:7b:da:2c:d6 (random), RSSI=-80 dB
+  Flags = 06
+  Manufacturer = 4c000c0e0811023a594c97f6570865284dc1
+Device 64:9a:4c:83:02:f8 (random), RSSI=-94 dB
+  Flags = 06
+  Manufacturer = 4c000c0e00eb2bcd31f268523ebe179f0cf7
+Device 04:4d:b3:43:21:f8 (random), RSSI=-95 dB
+  Flags = 1b
+  Manufacturer = 4c0009060312c0a8016b
+Device 7a:c6:8f:30:b7:31 (random), RSSI=-88 dB
+  Flags = 06
+  Manufacturer = 4c0010020b00
+Device 60:f8:1d:aa:03:ff (public), RSSI=-80 dB
+  Flags = 06
+  Manufacturer = 4c0010020b00
+Device 4a:09:2a:65:ef:1e (random), RSSI=-78 dB
+  Flags = 06
+  Manufacturer = 4c000c0e082e0e872b76f2eed232d2be031f
+Device 6e:e9:dd:eb:0a:0e (random), RSSI=-76 dB
+  Flags = 06
+  Manufacturer = 4c000c0e089ca1e9ba2b4e46261627237211
+Device f4:0f:24:1c:6a:55 (public), RSSI=-77 dB
+  Flags = 06
+  Manufacturer = 4c0010020b00
+Device 68:9c:35:41:4c:51 (random), RSSI=-91 dB
+  Flags = 06
+  Manufacturer = 4c0010020b00
+Device 6c:40:08:a0:0d:e5 (public), RSSI=-76 dB
+  Flags = 06
+  Manufacturer = 4c0010020b00
+Device ac:bc:32:6d:3f:51 (public), RSSI=-98 dB
+  Flags = 1a
+  Manufacturer = 4c0010020100
+Device ed:39:7c:49:ea:0f (random), RSSI=-95 dB
+  Complete Local Name = PAULIG_MUKI_49EA0F
+  Complete 128b Services = a1b496cb44ce8f65a804879001006406
+  Flags = 06

@@ -31,7 +31,15 @@ USER_RANDOM = 0
 USER_RICHARD = 1
 USER_KRISHJANIS = 2
 
-USERS_MAC_ARRAY = ["00:00:00:00:00:00", "c7:f5:0e:a2:ad:9c", "e5:8d:eb:89:ee:4d"]
+USERS_MAC_ARRAY = ["44:74:6c:98:cc:d3", "c7:f5:0e:a2:ad:9c", "e5:8d:eb:89:ee:4d"]
 
-RSSI_THRESH_MIN	= -80
+RSSI_THRESH_MIN	= -100
 RSSI_THRESH_MAX = -50
+
+# Pink Flyd - time
+AUDIO_TRACKS = [
+["audio/space_odissey.mp3", "audio/Slash.mp3", "audio/thunderstruck.mp3", "audio/thunderstruck.mp3", "audio/thunderstruck.mp3"],
+["audio/space_odissey.mp3", "audio/Slash.mp3", "audio/thunderstruck.mp3", "audio/thunderstruck.mp3", "audio/thunderstruck.mp3"],
+["audio/space_odissey.mp3", "audio/Slash.mp3", "audio/thunderstruck.mp3", "audio/thunderstruck.mp3", "audio/thunderstruck.mp3"]
+]
+
